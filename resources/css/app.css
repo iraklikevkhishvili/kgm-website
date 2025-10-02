@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.heading {
+                    font-size: 96px;
+                    text-align: center;
+                    width: 100vw;
+                }

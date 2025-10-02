@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+title {
+  display: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+/* ===== BASE ===== */
+html {
+  scroll-padding-top: 100px;
+}
+// Example SCSS entry
+$white: #ffffff;
+$black: #353535;
+
+body {
+  font-family: sans-serif;
+  background: $white;
+  color: $black;
+  overflow-x: hidden;
+}
+
+.hero {
+  padding: 4rem;
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+.hero-section {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+.hero-img-wrapper {
+    width: 100%;
+}
+.hero-img-wrapper img {
+    display: block;
+    aspect-ratio: 3.5/1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.hero-text-wrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 0;
+    padding-top: 5rem;
+}
+.hero-text-wrapper h1 {
+    font-size: 3.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 56px;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+}
+.hero-text-wrapper h2 {
+    font-size: 1.25em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+}
+.hero-text-wrapper p {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 28px;
+    letter-spacing: 1.05px;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'asul';
+}
+
+p {
+  font-family: 'roboto';
+}
