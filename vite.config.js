@@ -5,9 +5,11 @@ import fg from 'fast-glob'
 
 const pageEntries = fg.sync([
     'resources/css/**/*.css',
-    'resources/scss/**/*.scss',
+    'resources/scss/pages/*.scss',
     'resources/js/**/*.js',
     'resources/ts/**/*.ts',
+    'resources/scss/components/footer.scss',
+    'resources/scss/components/header.scss',
 ])
 export default defineConfig({
     plugins: [

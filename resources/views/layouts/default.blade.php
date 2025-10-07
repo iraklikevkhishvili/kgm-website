@@ -11,31 +11,36 @@
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="preload" href="/static/fonts/asul-v21-latin-700.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous" />
+    <link rel="preload" href="/static/fonts/roboto-v47-latin-regular.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous" />
+    <link rel="preload" href="/static/fonts/roboto-v47-latin-600.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous" />
 
 
     <title>@yield('title', 'KGM Wines')</title>
 
     {{-- Global styles (Tailwind + site SCSS) --}}
-    @vite(['resources/css/app.css', 'resources/scss/app.scss'])
-    @vite(['resources/css/app.css', 'resources/scss/font.scss'])
-
-    {{-- Optional: layout-level partial styles --}}
-    @vite(['resources/scss/header.scss', 'resources/scss/footer.scss'])
+    @vite(['resources/scss/app.scss'])
+    @vite(['resources/scss/components/header.scss'])
 
     @yield('head-end')
+    {{-- Optional: layout-level partial styles --}}
+    @vite(['resources/scss/components/footer.scss'])
 </head>
 
 <body>
 
     {{-- Header partial --}}
-    @include('layouts.header')
+    @include('layouts.components.header')
 
     <main>
         @yield('content')
     </main>
 
     {{-- Footer partial --}}
-    @include('layouts.footer')
+    @include('layouts.components.footer')
 
     {{-- Global scripts --}}
     @vite(['resources/js/app.js'])

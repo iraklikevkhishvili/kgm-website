@@ -1,0 +1,38 @@
+@import "../abstracts/variables",
+"../abstracts/mixins",
+"../abstracts/functions";
+
+h1 {
+    @include text-h1;
+    text-align: center;
+}
+
+h2 {
+    @include text-h2;
+    text-align: center;
+}
+
+h3 {
+    @include text-h3;
+
+    text-align: center;
+}
+
+h4 {
+    @include text-h4;
+    text-align: center;
+}
+
+p {
+    @include text-p;
+    text-align: center;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}

@@ -1,0 +1,293 @@
+@mixin responsive($breakpoint, $direction: max) {
+    @media only screen and (#{$direction}-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin text-h1 {
+    // typography
+    font-family: $font-family-heading;
+    font-size: $fs-3xl;
+    font-weight: $font-weight-semibold;
+    text-transform: $heading-transform-default;
+    line-height: 3.5rem;
+    letter-spacing: 0.35rem;
+    text-decoration: none;
+    // color
+    color: $color-text;
+    // spacing
+    margin-bottom: calc($space-2 * 3);
+
+    @include responsive($bp-lg) {
+        line-height: 2.25rem;
+        letter-spacing: 0.2rem;
+    }
+}
+
+@mixin text-h2 {
+    // typography
+    font-family: $font-family-heading;
+    font-size: $fs-2xl;
+    font-weight: $font-weight-semibold;
+    text-transform: $heading-transform-default;
+    line-height: 2.25rem;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+    // color
+    color: $color-text;
+    // spacing
+    margin-bottom: calc($space-2 * 3);
+
+    @include responsive($bp-lg) {
+        line-height: 2rem;
+        letter-spacing: 0.2625rem;
+    }
+}
+
+@mixin text-h3 {
+    font-family: $font-family-heading;
+    font-size: $fs-xl;
+    font-weight: $font-weight-semibold;
+    text-transform: $heading-transform-default;
+    line-height: 1.75rem;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+    color: $color-text;
+    // spacing
+    margin-bottom: calc($space-2 * 3);
+
+    @include responsive($bp-lg) {
+        line-height: 1.875rem;
+        letter-spacing: 0.275rem;
+    }
+}
+
+@mixin text-h4 {
+    font-family: $font-family-heading;
+    font-size: $fs-lg;
+    font-weight: $font-weight-semibold;
+    text-transform: $heading-transform-default;
+    line-height: 1.75rem;
+    letter-spacing: 0.25rem;
+    text-decoration: none;
+    color: $color-text;
+    // spacing
+    margin-bottom: calc($space-2 * 6);
+
+    @include responsive($bp-lg) {
+        line-height: 1.25rem;
+        letter-spacing: 0.2rem;
+    }
+}
+
+@mixin text-p {
+    font-family: $font-family-base;
+    font-size: $fs-sm;
+    font-weight: $font-weight-regular;
+    text-transform: none;
+    line-height: 1.75rem;
+    letter-spacing: 0.06563rem;
+    text-decoration: none;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+
+    @include responsive($bp-lg) {
+        line-height: 1.5rem;
+        letter-spacing: 0.06125rem;
+    }
+}
+
+
+@mixin button-submit {
+    font-family: $font-family-heading;
+    font-size: $fs-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: $heading-transform-default;
+    line-height: 2.5rem;
+    letter-spacing: 0.09375rem;
+    text-decoration: none;
+    color: $color-text;
+
+    @media (max-width: 1024px) {
+        line-height: 24px;
+        letter-spacing: 0.98px;
+        margin-bottom: 12px;
+    }
+
+}
+
+@mixin link-nav {}
+
+
+
+
+/**
+* Buttons
+*/
+@mixin submitBtn {
+    font-family: $font-family-heading;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    padding: 0;
+    box-sizing: border-box;
+    color: #5b5b5b;
+    border: 1px solid;
+    border-color: transparent;
+    background-color: transparent;
+    width: 200px;
+    max-width: 200px;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    padding: 5px;
+    position: relative;
+    border-radius: 0;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        position: absolute;
+        right: 0;
+        left: 0;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #9b9b9b;
+        transition: width 300ms cubic-bezier(0.42, 0, 0.58, 1),
+            left 300ms cubic-bezier(0.42, 0, 0.58, 1),
+            right 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    &:hover {
+        background-color: transparent;
+        color: #5b5b5b;
+        transform: scale(1.1);
+
+        &::before,
+        &::after {
+            right: 2rem;
+            left: 2rem;
+            width: calc(100% - 4rem);
+        }
+    }
+}
+
+@mixin navLink {
+    font-family: $font-family-heading;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+    text-align: start;
+    padding: 0;
+    box-sizing: border-box;
+    color: #5b5b5b;
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        text-align: start;
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+@mixin navMenuLink {
+    position: relative;
+    display: block;
+    width: fit-content;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: black;
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
+/**
+* Header/Footer Typography
+*/
+@mixin HeaderMenu1 {
+    font-family: $font-family-heading;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.75rem;
+    letter-spacing: 0.09375rem;
+}
+
+@mixin HeaderMenu2 {
+    font-family: $font-family-heading;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.75rem;
+    letter-spacing: 0.09375rem;
+}
+
+@mixin HeaderMenu3 {
+    font-family: $font-family-base;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-decoration: none;
+    line-height: 1.75rem;
+    letter-spacing: 0.09375rem;
+}
+
+@mixin FooterMenu1 {
+    font-family: $font-family-base;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.75rem;
+    letter-spacing: 0.09375rem;
+}
+
+@mixin FooterMenu2 {
+    font-family: $font-family-base;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.75rem;
+    letter-spacing: 0.09375rem;
+}

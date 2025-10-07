@@ -1,0 +1,74 @@
+html {
+    box-sizing: border-box;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 100px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+body {
+    font-family: $font-family-base;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $color-bg;
+    color: $color-text;
+    overflow-x: hidden;
+    font-size: $fs-sm;
+    font-weight: $font-weight-regular;
+    line-height: 1.75rem;
+    letter-spacing: 0.06563rem;
+    position: inline;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 1024px) {
+        line-height: 1.5rem;
+        letter-spacing: 0.06125rem;
+    }
+}
+
+section {
+    width: 100vw;
+    position: relative;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+image {
+    width: 100%;
+}
+
+// Example SCSS entry
+$white: #ffffff;
+$black: #353535;
+
+body {
+    font-family: sans-serif;
+    background: $white;
+    color: $color-text;
+    overflow-x: hidden;
+}
+
+title {
+    opacity: 0;
+    position: absolute;
+    z-index: 999;
+    visibility: hidden;
+}

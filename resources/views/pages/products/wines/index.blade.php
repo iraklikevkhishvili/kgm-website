@@ -9,14 +9,12 @@
 @endsection
 
 @section('content')
-    <section class="hero-section">
-        <div class="hero-img-wrapper">
-            <img src="https://kgmwines.com/wp-content/uploads/achievements-page-hero-image.webp" alt="">
-        </div>
-        <div class="hero-text-wrapper">
-            <h1>Our Wines</h1>
-            <h2>Explore Our Collection of Handcrafted Wines</h2>
-            <p>At KGM, each bottle tells a story rooted in tradition, terroir, and innovation. From bold reds to refined
+    <section class="hero hero--wines">
+        <div class="hero__content">
+            <h1 class="hero__title">Our Wines</h1>
+            <h4 class="hero__subtitle">Explore Our Collection of Handcrafted Wines</h4>
+            <p class="hero__text">At KGM, each bottle tells a story rooted in tradition, terroir, and innovation. From bold
+                reds to refined
                 whites and distinctive amber wines, our collection reflects the rich diversity of Georgian winemaking.
                 Carefully cultivated and expertly crafted, these wines embody our pursuit of excellence and our passion for
                 sharing Georgia’s viticultural heritage with the world.</p>
